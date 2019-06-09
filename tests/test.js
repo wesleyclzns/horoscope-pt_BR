@@ -7,86 +7,86 @@ const test = require('tape');
 
 // data to test against
 let borderDates = {
-	"January": [
-		[19, 'Capricorn'],
-		[20, 'Aquarius']
+	"Janeiro": [
+		[19, 'Capricornio'],
+		[20, 'Aquario']
 	],
-	"February": [
-		[18, 'Aquarius'],
-		[19, 'Pisces']
+	"Fevereiro": [
+		[18, 'Aquario'],
+		[19, 'Peixes']
 	],
-	"March": [
-		[20, 'Pisces'],
+	"Março": [
+		[20, 'Peixes'],
 		[21, 'Aries']
 	],
-	"April": [
+	"Abril": [
 		[19, 'Aries'],
-		[20, 'Taurus']
+		[20, 'Touro']
 	],
-	"May": [
-		[20, 'Taurus'],
-		[21, 'Gemini']
+	"Maio": [
+		[20, 'Touro'],
+		[21, 'Gêmeos']
 	],
-	"June": [
-		[20, 'Gemini'],
-		[21, 'Cancer']
+	"Junho": [
+		[20, 'Gêmeos'],
+		[21, 'Câncer']
 	],
-	"July": [
-		[22, 'Cancer'],
-		[23, 'Leo']
+	"Julho": [
+		[22, 'Câncer'],
+		[23, 'Leão']
 	],
-	"August": [
-		[22, 'Leo'],
-		[23, 'Virgo']
+	"Agosto": [
+		[22, 'Leão'],
+		[23, 'Virgem']
 	],
-	"September": [
-		[22, 'Virgo'],
+	"Setembro": [
+		[22, 'Virgem'],
 		[23, 'Libra']
 	],
-	"October": [
+	"Outubro": [
 		[22, 'Libra'],
-		[23, 'Scorpio']
+		[23, 'Escorpião']
 	],
-	"November": [
-		[21, 'Scorpio'],
-		[22, 'Sagittarius']
+	"Novembro": [
+		[21, 'Escorpião'],
+		[22, 'Sagitario']
 	],
-	"December": [
-		[21, 'Sagittarius'],
-		[22, 'Capricorn']
+	"Dezembro": [
+		[21, 'Sagitario'],
+		[22, 'Capricornio']
 	]
 }
 
 // hard-coded array of months in number format for getSign testing
 let monthNums = {
-	"January": 1,
-	"February": 2,
-	"March": 3,
-	"April": 4,
-	"May": 5,
-	"June": 6,
-	"July": 7,
-	"August": 8,
-	"September": 9,
-	"October": 10,
-	"November": 11,
-	"December": 12,
+	"Janeiro": 1,
+	"Fevereiro": 2,
+	"Março": 3,
+	"Abril": 4,
+	"Maio": 5,
+	"Junho": 6,
+	"Julho": 7,
+	"Agosto": 8,
+	"Setembro": 9,
+	"Outubro": 10,
+	"Novembro": 11,
+	"Dezembro": 12,
 }
 
 // hard-coded array of zodiac animal years for getZodiac testing
 let animalsToTest = {
-	'Rat': [1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020],
-	'Ox': [1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021],
-	'Tiger': [1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022],
-	'Rabbit': [1927, 1939, 1951, 1963, 1975, 1987, 1999, 2011, 2023],
-	'Dragon': [1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024],
-	'Snake': [1929, 1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025],
-	'Horse': [1930, 1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026],
-	'Goat': [1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027],
-	'Monkey': [1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028],
-	'Rooster': [1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029],
-	'Dog': [1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030],
-	'Pig': [1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031],
+	'Rato': [1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020],
+	'Boi': [1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021],
+	'Tigre': [1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022],
+	'Coelho': [1927, 1939, 1951, 1963, 1975, 1987, 1999, 2011, 2023],
+	'Dragão': [1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024],
+	'Cobra': [1929, 1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025],
+	'Cavalo': [1930, 1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026],
+	'Cabra': [1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027],
+	'Macaco': [1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028],
+	'Galo': [1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029],
+	'Cachorro': [1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030],
+	'Porco': [1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031],
 }
 
 // getSign tests

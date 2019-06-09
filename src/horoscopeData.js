@@ -16,56 +16,56 @@ export const monthDayRange = {
 
 // array of zodiac animals 
 export const ZodiacArray = [
-	'Monkey',
-	'Rooster',
-	'Dog',
-	'Pig',
-	'Rat',
-	'Ox',
-	'Tiger',
-	'Rabbit',
-	'Dragon',
-	'Snake',
-	'Horse',
-	'Goat'
+	'Macaco',
+	'Galo',
+	'Cachorro',
+	'Porco',
+	'Rato',
+	'Boi',
+	'Tigre',
+	'Coelho',
+	'Dragão',
+	'Cobra',
+	'Cavalo',
+	'Cabra'
 ];
 
 // object lookup w/ functions to process different Horoscope Signs inside each month
 export const handleMonths = {
   1: function (day) {
-    if (day <= 19) { return 'Capricorn' } else { return 'Aquarius'}
+    if (day <= 19) { return 'Capricornio' } else { return 'Aquario'}
   },
   2: function (day) {
-    if (day <= 18) { return 'Aquarius' } else { return 'Pisces'}
+    if (day <= 18) { return 'Aquario' } else { return 'Peixes'}
   },
   3: function (day) {
-    if (day <= 20) { return 'Pisces' } else { return 'Aries'}
+    if (day <= 20) { return 'Peixes' } else { return 'Aries'}
   },
   4: function (day) {
-    if (day <= 19) { return 'Aries' } else { return 'Taurus'}
+    if (day <= 19) { return 'Aries' } else { return 'Touro'}
   },
   5: function (day) {
-    if (day <= 20) { return 'Taurus' } else { return 'Gemini'}
+    if (day <= 20) { return 'Touro' } else { return 'Gemeos'}
   },
   6: function (day) {
-    if (day <= 20) { return 'Gemini' } else { return 'Cancer'}
+    if (day <= 20) { return 'Gemeos' } else { return 'Cancer'}
   },
   7: function (day) {
-    if (day <= 22) { return 'Cancer' } else { return 'Leo'}
+    if (day <= 22) { return 'Cancer' } else { return 'Leão'}
   },
   8: function (day) {
-    if (day <= 22) { return 'Leo' } else { return 'Virgo'}
+    if (day <= 22) { return 'Leão' } else { return 'Virgem'}
   },
   9: function (day) {
-    if (day <= 22) { return 'Virgo' } else { return 'Libra'}
+    if (day <= 22) { return 'Virgem' } else { return 'Libra'}
   },
   10: function (day) {
-    if (day <= 22) { return 'Libra' } else { return 'Scorpio'}
+    if (day <= 22) { return 'Libra' } else { return 'Escorpião'}
   },
   11: function (day) {
-    if (day <= 21) { return 'Scorpio' } else { return 'Sagittarius'}
+    if (day <= 21) { return 'Escorpião' } else { return 'Sagitario'}
   },
   12: function (day) {
-    if (day <= 21) { return 'Sagittarius' } else { return 'Capricorn'}
+    if (day <= 21) { return 'Sagitario' } else { return 'Capricornio'}
   }
 };
